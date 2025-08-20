@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "segmented-creator"
-version = "0.1.4"
+version = "0.1.5"
 description = "A new freeware for safe validation of vision-based navigation in aerial vehicles"
 readme = "README.md"
 authors = [

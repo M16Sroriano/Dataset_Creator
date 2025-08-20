@@ -53,45 +53,35 @@ def guardar_configuracion(args, config_path="config.yaml"):
 def process_step():
     print("Starting processing steps...")
 
-    root = os.getcwd()
-    print(f"Current working directory: {root}")
-    current_dir = os.path.join(root, "segmentedcreator")
-
     print("####################\n" \
     "Running first step...\n"
     "####################")
-    script_path = os.path.join(current_dir, "first_step.py")
-    subprocess.run(["uv", "run", script_path])
+    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.first_step"])
 
     print("####################\n" \
     "Running second step...\n"
     "####################")
-    script_path = os.path.join(current_dir, "second_step.py")
-    subprocess.run(["uv", "run", script_path])
+    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.second_step"])
 
     print("####################\n" \
     "Running third step...\n"
     "####################")
-    script_path = os.path.join(current_dir, "third_step.py")
-    subprocess.run(["uv", "run", script_path])
+    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.third_step"])
 
     print("####################\n" \
     "Running fourth step...\n"
     "####################")
-    script_path = os.path.join(current_dir, "fourth_step.py")
-    subprocess.run(["uv", "run", script_path])
+    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.fourth_step"])
 
     print("####################\n" \
     "Running fifth step...\n"
     "####################")
-    script_path = os.path.join(current_dir, "fifth_step.py")
-    subprocess.run(["uv", "run", script_path])
+    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.fifth_step"])
 
     print("####################\n" \
     "Running sixth step...\n"
     "####################")
-    script_path = os.path.join(current_dir, "sixth_step.py")
-    subprocess.run(["uv", "run", script_path])
+    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.sixth_step"])
 
 
 def main():
