@@ -492,7 +492,7 @@ def get_class_from_user():
     root = tk.Tk()
     root.withdraw()  # Hide the main window
 
-    opciones = list(pd.read_csv('class_dict.csv')['name'])
+    opciones = list(pd.read_csv(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'class_dict.csv'))['name'])
 
     # Create popup window
     popup = tk.Toplevel()
@@ -542,7 +542,7 @@ def load_class_colors(csv_path):
 
 def group_masks_color(mask_folder, frames_folder):
     # Load class colors
-    class_colors = load_class_colors(os.path.join('class_dict.csv'))
+    class_colors = load_class_colors(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'class_dict.csv'))
     
     image_sums = {}  # {group_id: imagen_acumulada_BGR}
     files = [f for f in os.listdir(mask_folder) if f.startswith('outmask_fr')]

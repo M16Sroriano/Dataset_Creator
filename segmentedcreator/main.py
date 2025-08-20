@@ -56,32 +56,32 @@ def process_step():
     print("####################\n" \
     "Running first step...\n"
     "####################")
-    subprocess.run(["python", "first_step.py"])
+    subprocess.run(["uv", "run", r"segmentedcreator\first_step.py"])
 
     print("####################\n" \
     "Running second step...\n"
     "####################")
-    subprocess.run(["python", "second_step.py"])
+    subprocess.run(["uv", "run", r"segmentedcreator\second_step.py"])
 
     print("####################\n" \
     "Running third step...\n"
     "####################")
-    subprocess.run(["python", "third_step.py"])
+    subprocess.run(["uv", "run", r"segmentedcreator\third_step.py"])
 
     print("####################\n" \
     "Running fourth step...\n"
     "####################")
-    subprocess.run(["python", "fourth_step.py"])
+    subprocess.run(["uv", "run", r"segmentedcreator\fourth_step.py"])
 
     print("####################\n" \
     "Running fifth step...\n"
     "####################")
-    subprocess.run(["python", "fifth_step.py"])
+    subprocess.run(["uv", "run", r"segmentedcreator\fifth_step.py"])
 
     print("####################\n" \
     "Running sixth step...\n"
     "####################")
-    subprocess.run(["python", "sixth_step.py"])
+    subprocess.run(["uv", "run", r"segmentedcreator\sixth_step.py"])
 
 
 def main():
