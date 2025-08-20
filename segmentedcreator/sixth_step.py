@@ -1,6 +1,6 @@
 import argparse
 import os
-import tooldata as td
+import segmentedcreator.tooldata as td
 import sys
 import yaml
 import shutil

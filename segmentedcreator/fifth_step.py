@@ -1,7 +1,7 @@
 import argparse
 import os
 import cv2
-import tooldata as td
+import segmentedcreator.tooldata as td
 import sys
 import yaml
 import shutil

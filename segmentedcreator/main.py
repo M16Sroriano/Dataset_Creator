@@ -2,7 +2,7 @@ import os
 import argparse
 import yaml
 import sys
-import tooldata as td # type: ignore
+import segmentedcreator.tooldata as td # type: ignore
 import subprocess
 
 def parse_arguments(config_path="config.yaml"):

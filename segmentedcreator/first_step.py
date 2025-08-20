@@ -1,6 +1,6 @@
 import cv2
 import os
-import tooldata as td
+import segmentedcreator.tooldata as td
 from tqdm import tqdm
 import argparse
 import yaml
