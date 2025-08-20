@@ -97,7 +97,7 @@ def get_folder_path():
     return str(path_obj.parent), str(path_obj.resolve()) # (folder, file_path)
 
 ##### Align frames #####
-def align_images(img1, img2):
+def alinear_imagen(img1, img2):
     # Convert to grayscale
     gray1 = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
     gray2 = cv2.cvtColor(img2, cv2.COLOR_BGR2GRAY)

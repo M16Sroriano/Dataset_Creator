@@ -53,35 +53,26 @@ def guardar_configuracion(args, config_path="config.yaml"):
 def process_step():
     print("Starting processing steps...")
 
-    print("####################\n" \
-    "Running first step...\n"
-    "####################")
-    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.first_step"])
+    steps = [
+        "first_step",
+        "second_step", 
+        "third_step",
+        "fourth_step",
+        "fifth_step",
+        "sixth_step"
+    ]
 
-    print("####################\n" \
-    "Running second step...\n"
-    "####################")
-    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.second_step"])
+    for step in steps:
+        print(f"####################\nRunning {step}...\n####################")
+        
+        # Ejecutar el proceso y verificar el código de retorno
+        result = subprocess.run(["uv", "run", "python", "-m", f"segmentedcreator.{step}"])
+        
+        # Si el proceso falla, salir inmediatamente
+        if result.returncode != 0:
+            sys.exit(f"Error executing {step}. Process exited with code {result.returncode}")
 
-    print("####################\n" \
-    "Running third step...\n"
-    "####################")
-    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.third_step"])
-
-    print("####################\n" \
-    "Running fourth step...\n"
-    "####################")
-    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.fourth_step"])
-
-    print("####################\n" \
-    "Running fifth step...\n"
-    "####################")
-    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.fifth_step"])
-
-    print("####################\n" \
-    "Running sixth step...\n"
-    "####################")
-    subprocess.run(["uv", "run", "python", "-m", "segmentedcreator.sixth_step"])
+    print("All steps completed successfully!")
 
 
 def main():
@@ -96,7 +87,6 @@ def main():
 
     try:
         process_step()
-        #td.group_masks_color(folders["mask_folder"], folders["semantic_folder"])
     except Exception as e:
         sys.exit(f"Error processing video: {e}")
 
