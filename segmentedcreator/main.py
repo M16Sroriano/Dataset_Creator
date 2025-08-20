@@ -53,35 +53,45 @@ def guardar_configuracion(args, config_path="config.yaml"):
 def process_step():
     print("Starting processing steps...")
 
+    root = os.getcwd()
+    print(f"Current working directory: {root}")
+    current_dir = os.path.join(root, "segmentedcreator")
+
     print("####################\n" \
     "Running first step...\n"
     "####################")
-    subprocess.run(["uv", "run", r"segmentedcreator\first_step.py"])
+    script_path = os.path.join(current_dir, "first_step.py")
+    subprocess.run(["uv", "run", script_path])
 
     print("####################\n" \
     "Running second step...\n"
     "####################")
-    subprocess.run(["uv", "run", r"segmentedcreator\second_step.py"])
+    script_path = os.path.join(current_dir, "second_step.py")
+    subprocess.run(["uv", "run", script_path])
 
     print("####################\n" \
     "Running third step...\n"
     "####################")
-    subprocess.run(["uv", "run", r"segmentedcreator\third_step.py"])
+    script_path = os.path.join(current_dir, "third_step.py")
+    subprocess.run(["uv", "run", script_path])
 
     print("####################\n" \
     "Running fourth step...\n"
     "####################")
-    subprocess.run(["uv", "run", r"segmentedcreator\fourth_step.py"])
+    script_path = os.path.join(current_dir, "fourth_step.py")
+    subprocess.run(["uv", "run", script_path])
 
     print("####################\n" \
     "Running fifth step...\n"
     "####################")
-    subprocess.run(["uv", "run", r"segmentedcreator\fifth_step.py"])
+    script_path = os.path.join(current_dir, "fifth_step.py")
+    subprocess.run(["uv", "run", script_path])
 
     print("####################\n" \
     "Running sixth step...\n"
     "####################")
-    subprocess.run(["uv", "run", r"segmentedcreator\sixth_step.py"])
+    script_path = os.path.join(current_dir, "sixth_step.py")
+    subprocess.run(["uv", "run", script_path])
 
 
 def main():
@@ -96,7 +106,7 @@ def main():
 
     try:
         process_step()
-        td.group_masks_color(folders["mask_folder"], folders["semantic_folder"])
+        #td.group_masks_color(folders["mask_folder"], folders["semantic_folder"])
     except Exception as e:
         sys.exit(f"Error processing video: {e}")
 
