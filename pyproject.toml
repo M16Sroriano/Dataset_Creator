@@ -166,11 +166,6 @@ dependencies = [
 [project.scripts]
 datasetcreator = "segmentedcreator.main:main"
 
-[project.optional-dependencies]
-dev = [
-    "SAM_2 @ git+https://github.com/facebookresearch/sam2.git@2b90b9f5ceec907a1c18123530e92e794ad901a4"
-]
-
 [tool.setuptools.packages.find]
 include = ["segmentedcreator*"]
 
